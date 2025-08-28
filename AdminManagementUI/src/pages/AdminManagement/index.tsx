@@ -1,18 +1,23 @@
-import { useQuery } from "@tanstack/react-query";
-import { getUsers } from "../../api/users/usersApi";
+import { useQueries } from '@tanstack/react-query';
+import { getUsers } from '../../api/users/usersApi';
+import UserTable from './userTable/userTable';
+import { getRoles } from '../../api/roles/rolesApi';
+import { Loader } from '../../components/loader/loader';
 
 export default function AdminManagement() {
-    const { data: users, isLoading, error } = useQuery({
-        queryKey: ["users"],
-        queryFn: getUsers,
-    }, );
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error fetching users</p>;
-    return (
-    <ul>
-      {users?.map((u) => (
-        <li key={u.id}>{u.name}</li>
-      ))}
-    </ul>
-  );
+    const [usersQuery, rolesQuery] = useQueries({
+        queries: [
+            {
+                queryKey: ['users'],
+                queryFn: getUsers,
+            },
+            {
+                queryKey: ['roles'],
+                queryFn: getRoles,
+            },
+        ],
+    });
+    if (usersQuery.isLoading || rolesQuery.isLoading) return <Loader />;
+    if (usersQuery.error || rolesQuery.error) return <p>Error fetching data</p>;
+    return <UserTable usersList={usersQuery.data || []} allRoles={rolesQuery.data || []} />;
 }
