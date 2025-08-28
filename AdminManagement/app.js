@@ -2,11 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const path = require("path");
+const dotenv = require("dotenv");
+const cors = require("cors");
 const users_1 = require("./routes/users");
 const roles_1 = require("./routes/roles");
-const debug = require('debug')('my express app');
+const debug = require('debug')('AdminManagement');
 const app = express();
+dotenv.config();
+dotenv.config({ path: `.env.local`, override: true });
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors({
+    origin: process.env.UI_APP_URL
+}));
 app.use('/users', users_1.default);
 app.use('/roles', roles_1.default);
 // catch 404 and forward to error handler

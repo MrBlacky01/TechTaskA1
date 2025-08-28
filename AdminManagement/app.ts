@@ -1,14 +1,22 @@
 import * as express from 'express';
 import { AddressInfo } from "net";
 import * as path from 'path';
-
+import * as dotenv from 'dotenv';
+import * as cors from 'cors';
+    
 import users from './routes/users';
 import roles from './routes/roles';
 
-const debug = require('debug')('my express app');
+const debug = require('debug')('AdminManagement');
 const app = express();
+dotenv.config();
+dotenv.config({ path: `.env.local`, override: true });
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cors({
+    origin: process.env.UI_APP_URL
+}));
 
 app.use('/users', users);
 app.use('/roles', roles);

@@ -1,4 +1,4 @@
-import express = require('express');
+import * as express from 'express';
 import { readDB, writeDB } from '../dbHelpers/dbHelpers';
 const router = express.Router();
 
