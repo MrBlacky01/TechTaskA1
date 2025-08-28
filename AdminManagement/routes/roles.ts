@@ -1,11 +1,10 @@
-/*
- * GET users listing.
- */
 import express = require('express');
+import { readDB } from '../dbHelpers/dbHelpers';
 const router = express.Router();
 
 router.get('/', (req: express.Request, res: express.Response) => {
-    res.send("respond with a resource");
+    const db = readDB();
+    res.json(db.roles);
 });
 
 export default router;

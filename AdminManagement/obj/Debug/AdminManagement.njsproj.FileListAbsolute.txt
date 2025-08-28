@@ -1,0 +1,6 @@
+C:\Work\Self\Belitsoft Test project\backend\AdminManagement\obj\Debug\AdminManagement.njsproj.AssemblyReference.cache
+C:\Work\Self\Belitsoft Test project\backend\AdminManagement\obj\Debug\AdminManagement.njsproj.CoreCompileInputs.cache
+C:\Work\Self\Belitsoft Test project\backend\AdminManagement\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Work\Self\Belitsoft Test project\AdminManagement\obj\Debug\AdminManagement.njsproj.AssemblyReference.cache
+C:\Work\Self\Belitsoft Test project\AdminManagement\obj\Debug\AdminManagement.njsproj.CoreCompileInputs.cache
+C:\Work\Self\Belitsoft Test project\AdminManagement\bin\Microsoft.NodejsTools.WebRole.dll

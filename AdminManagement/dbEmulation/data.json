@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@example.com",
+      "roles": [ 1 ]
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@example.com",
+      "roles": [ 2 ]
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "roles": [ 3 ]
+    },
+    {
+      "id": 4,
+      "name": "Danzel",
+      "email": "danzel@example.com",
+      "roles": [ 4 ]
+    },
+    {
+      "id": 5,
+      "name": "Eva",
+      "email": "eva@example.com",
+      "roles": [ 2, 3 ]
+    },
+    {
+      "id": 6,
+      "name": "Franc",
+      "email": "franc@example.com",
+      "roles": [ 1, 2 ]
+    },
+    {
+      "id": 7,
+      "name": "Henrich",
+      "email": "henrich@example.com",
+      "roles": [ 1, 2, 3 ]
+    },
+    {
+      "id": 8,
+      "name": "Ivona",
+      "email": "ivona@example.com",
+      "roles": [ 1 ]
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "Admin"
+    },
+    {
+      "id": 2,
+      "name": "Editor"
+    },
+    {
+      "id": 3,
+      "name": "Viewer"
+    }
+  ]
+}
