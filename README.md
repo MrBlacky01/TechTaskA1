@@ -25,6 +25,5 @@ npm run start-dev
 #run frontend
 npm run dev
 
-
-![Application screenshot](<Screenshot 2025-08-29 113314.png>)
+<img src="Screenshot 2025-08-29 113314.png" alt="Application screenshot" width="600" />
 ```
