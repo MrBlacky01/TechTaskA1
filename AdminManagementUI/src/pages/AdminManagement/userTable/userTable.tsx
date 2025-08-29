@@ -1,22 +1,9 @@
 // src/components/UserTable.tsx
-import React, { useState } from 'react';
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Paper,
-    Select,
-    MenuItem,
-    FormControl,
-    InputLabel,
-    Chip,
-    Box,
-} from '@mui/material';
+import { useState } from 'react';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import type { User } from '../../../api/users/usersApi';
 import type { Role } from '../../../api/roles/rolesApi';
+import { UserRoles } from './userRoles/userRoles';
 
 interface Props {
     usersList: User[];
@@ -52,29 +39,7 @@ export const UserTable = ({ usersList, allRoles }: Props) => {
                             <TableCell>{user.name}</TableCell>
                             <TableCell>{user.email}</TableCell>
                             <TableCell>
-                                <FormControl fullWidth size="small">
-                                    <InputLabel id={`roles-label-${user.id}`}>Roles</InputLabel>
-                                    <Select
-                                        labelId={`roles-label-${user.id}`}
-                                        multiple
-                                        value={user.roles}
-                                        onChange={(e) => handleRoleChange(user.id, e.target.value as number[])}
-                                        renderValue={(selected) => (
-                                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                                                {(selected as number[]).map((roleId) => {
-                                                    const role = allRoles.find((r) => r.id === roleId);
-                                                    return <Chip key={roleId} label={role?.name ?? roleId} size="small" />;
-                                                })}
-                                            </Box>
-                                        )}
-                                    >
-                                        {allRoles.map((role) => (
-                                            <MenuItem key={role.id} value={role.id}>
-                                                {role.name}
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
-                                </FormControl>
+                                <UserRoles user={user} allRoles={allRoles} handleRoleChange={handleRoleChange} />
                             </TableCell>
                         </TableRow>
                     ))}
