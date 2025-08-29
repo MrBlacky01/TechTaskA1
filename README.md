@@ -25,5 +25,5 @@ npm run start-dev
 #run frontend
 npm run dev
 
-<img src="Screenshot 2025-08-29 113314.png" alt="Application screenshot" width="600" />
+<img width="3824" height="1484" alt="Screenshot 2025-08-29 113314" src="https://github.com/MrBlacky01/TechTaskA1/blob/main/Screenshot%202025-08-29%20113314.png" />
 ```
